@@ -27,18 +27,46 @@ const productos = [
   },
 ];
 
-let carrito = document.getElementById("carrito");
+let confirmarCompra = document.getElementById("confirmarCompra");
 let limpiarCarrito = document.getElementById("limpiarCarrito");
-
-carrito.onclick = () => {
-  alert(`Su pedido es: \n ${lista}`);
-};
-
 let MeatLover = document.getElementById("MeatLover");
 let BetoBurger = document.getElementById("BetoBurger");
 let TheClassic = document.getElementById("TheClassic");
 let RoyaleBacon = document.getElementById("RoyaleBacon");
 let SweetOnion = document.getElementById("SweetOnion");
+let submit = document.getElementById("submit");
+let vaciar = document.getElementById("vaciarCarrito");
+
+const vaciarCarrito = () => {
+  lista = [];
+  localStorage.clear();
+};
+
+const swa = () => {
+  Swal.fire({
+    title: "¡Gracias por tu compra!",
+    icon: "success",
+  });
+};
+
+confirmarCompra.onclick = () => {
+  swa();
+  vaciarCarrito();
+};
+
+let carrito = document.getElementById("carrito");
+const mostrarCarrito = () => {
+  let carritoHTML = "";
+  for (let i = 0; i < lista.length; i++) {
+    carritoHTML += `<li>${lista[i]}</li>`;
+  }
+  carrito.innerHTML = carritoHTML;
+};
+
+carrito.onclick = () => {
+  mostrarCarrito();
+}
+
 
 MeatLover.onclick = () => {
   lista.push(productos[0].nombre);
@@ -66,19 +94,11 @@ SweetOnion.onclick = () => {
   console.log("SweetOnion");
 };
 
-const vaciarCarrito = () => {
-  lista = [];
-  localStorage.clear();
-};
-
-// boton vaciar carrito todavia no esta creado
-limpiarCarrito.onclick = () => {
+vaciar.onclick = () => {
   vaciarCarrito();
 };
 
-let submit = document.getElementById("submit");
 submit.onclick = (e) => {
   e.preventDefault();
   alert("Mensaje enviado");
 };
-
