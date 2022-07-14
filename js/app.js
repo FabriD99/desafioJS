@@ -36,6 +36,7 @@ let RoyaleBacon = document.getElementById("RoyaleBacon");
 let SweetOnion = document.getElementById("SweetOnion");
 let submit = document.getElementById("submit");
 let vaciar = document.getElementById("vaciarCarrito");
+let carrito = document.getElementById("carrito");
 
 const vaciarCarrito = () => {
   lista = [];
@@ -54,51 +55,54 @@ confirmarCompra.onclick = () => {
   vaciarCarrito();
 };
 
-let carrito = document.getElementById("carrito");
-const mostrarCarrito = () => {
-  let carritoHTML = "";
-  for (let i = 0; i < lista.length; i++) {
-    carritoHTML += `<li>${lista[i]}</li>`;
-  }
-  carrito.innerHTML = carritoHTML;
-};
-
-carrito.onclick = () => {
-  mostrarCarrito();
-}
-
-
 MeatLover.onclick = () => {
   lista.push(productos[0].nombre);
-  localStorage.setItem("Meat Lover", JSON.stringify(lista));
-  console.log("MeatLover");
+  localStorage.setItem("Carrito", JSON.stringify(lista));
 };
 BetoBurger.onclick = () => {
   lista.push(productos[1].nombre);
-  localStorage.setItem("Beto Burger", JSON.stringify(lista));
-  console.log("BetoBurger");
+  localStorage.setItem("Carrito", JSON.stringify(lista));
 };
 TheClassic.onclick = () => {
   lista.push(productos[2].nombre);
-  localStorage.setItem("The Classic", JSON.stringify(lista));
-  console.log("TheClassic");
+  localStorage.setItem("Carrito", JSON.stringify(lista));
 };
 RoyaleBacon.onclick = () => {
   lista.push(productos[3].nombre);
-  localStorage.setItem("Royale Bacon", JSON.stringify(lista));
-  console.log("RoyaleBacon");
+  localStorage.setItem("Carrito", JSON.stringify(lista));
 };
 SweetOnion.onclick = () => {
   lista.push(productos[4].nombre);
-  localStorage.setItem("Sweet Onion", JSON.stringify(lista));
-  console.log("SweetOnion");
+  localStorage.setItem("Carrito", JSON.stringify(lista));
 };
 
+const mostrarProductos = () => {
+  let products = localStorage.getItem("Carrito");
+  if (products) {
+    products = JSON.parse(products);
+    lista = products;
+  }
+  products?.forEach((product) => {
+    let li = document.createElement("li");
+    li.innerHTML = product;
+    carrito.appendChild(li);
+  });
+};
+
+mostrarProductos();
+
 vaciar.onclick = () => {
+  Swal.fire({
+    title: "Carrito vaciado",
+    icon: "error",
+  });
   vaciarCarrito();
 };
 
 submit.onclick = (e) => {
   e.preventDefault();
-  alert("Mensaje enviado");
+  Swal.fire({
+    title: "Mensaje enviado",
+    icon: "success",
+  });
 };
