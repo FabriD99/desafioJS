@@ -47,7 +47,6 @@ let hamburguesas = document.getElementById("hamburguesas");
 fetch(productos)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     data.forEach((hamburguesa) => {
       let option = document.createElement("option");
       option.innerHTML = hamburguesa.nombre;
