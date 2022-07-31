@@ -1,79 +1,15 @@
 let lista = [];
-const productos = [
-  {
-    id: 1,
-    nombre: "Meat Lover",
-    precio: "900",
-  },
-  {
-    id: 2,
-    nombre: "Beto Burger",
-    precio: "800",
-  },
-  {
-    id: 3,
-    nombre: "The Classic",
-    precio: "800",
-  },
-  {
-    id: 4,
-    nombre: "Royale Bacon",
-    precio: "800",
-  },
-  {
-    id: 5,
-    nombre: "Sweet Onion",
-    precio: "800",
-  },
-];
 
 let confirmarCompra = document.getElementById("confirmarCompra");
-let limpiarCarrito = document.getElementById("limpiarCarrito");
-let MeatLover = document.getElementById("MeatLover");
-let BetoBurger = document.getElementById("BetoBurger");
-let TheClassic = document.getElementById("TheClassic");
-let RoyaleBacon = document.getElementById("RoyaleBacon");
-let SweetOnion = document.getElementById("SweetOnion");
-let submit = document.getElementById("submit");
-let vaciar = document.getElementById("vaciarCarrito");
-let carrito = document.getElementById("carrito");
-
-const vaciarCarrito = () => {
-  lista = [];
-  localStorage.clear();
-};
-
-const swa = () => {
+confirmarCompra.onclick = () => {
   Swal.fire({
     title: "¡Gracias por tu compra!",
     icon: "success",
   });
-};
-
-confirmarCompra.onclick = () => {
-  swa();
   vaciarCarrito();
-};
-
-MeatLover.onclick = () => {
-  lista.push(productos[0].nombre);
-  localStorage.setItem("Carrito", JSON.stringify(lista));
-};
-BetoBurger.onclick = () => {
-  lista.push(productos[1].nombre);
-  localStorage.setItem("Carrito", JSON.stringify(lista));
-};
-TheClassic.onclick = () => {
-  lista.push(productos[2].nombre);
-  localStorage.setItem("Carrito", JSON.stringify(lista));
-};
-RoyaleBacon.onclick = () => {
-  lista.push(productos[3].nombre);
-  localStorage.setItem("Carrito", JSON.stringify(lista));
-};
-SweetOnion.onclick = () => {
-  lista.push(productos[4].nombre);
-  localStorage.setItem("Carrito", JSON.stringify(lista));
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
 };
 
 const mostrarProductos = () => {
@@ -89,16 +25,58 @@ const mostrarProductos = () => {
   });
 };
 
-mostrarProductos();
+let vaciar = document.getElementById("vaciarCarrito");
+const vaciarCarrito = () => {
+  lista = [];
+  localStorage.clear();
+};
 
 vaciar.onclick = () => {
   Swal.fire({
     title: "Carrito vaciado",
     icon: "error",
   });
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
   vaciarCarrito();
 };
 
+const productos = "js/productos.json";
+let hamburguesas = document.getElementById("hamburguesas");
+fetch(productos)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    data.forEach((hamburguesa) => {
+      let option = document.createElement("option");
+      option.innerHTML = hamburguesa.nombre;
+      hamburguesas.appendChild(option);
+
+      let div = document.createElement("div");
+      div.classList.add("card");
+      div.innerHTML = `
+      <div style="display:flex; flex-direction:column; align-items: center">
+      <img src="${hamburguesa.img}" width="30%" alt="Foto producto">
+      <h3>${hamburguesa.nombre}</h3>
+      <p>${hamburguesa.descripcion}</p>
+      <h5>$${hamburguesa.precio}</h5>
+      <button class="btn btn-primary" id="${hamburguesa.nombre}">Agregar</button>
+      </div>
+      `;
+      document.getElementById("productos").appendChild(div);
+
+      let agregar = document.getElementById(hamburguesa.nombre);
+      agregar.onclick = () => {
+        lista.push(hamburguesa.nombre);
+        localStorage.setItem("Carrito", JSON.stringify(lista));
+        window.location.reload();
+      };
+    });
+  })
+  .catch((error) => console.log(error));
+
+let submit = document.getElementById("submit");
 submit.onclick = (e) => {
   e.preventDefault();
   Swal.fire({
@@ -106,3 +84,5 @@ submit.onclick = (e) => {
     icon: "success",
   });
 };
+
+mostrarProductos();

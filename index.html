@@ -70,29 +70,19 @@
                     <span class="lnr lnr-menu"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                    <ul class="navbar-nav d-flex justify-content-between">
-                        <li class="nav-item only-desktop">
-                            <a class="nav-link" id="side-nav-open">
-                                <span class="lnr lnr-menu"></span>
-                            </a>
-                        </li>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex justify-content-center">
                         <div class="d-flex flex-lg-row flex-column">
                             <li class="nav-item active">
                                 <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#hamburguesas" id="navbarDropdown"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#hamburguesas" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Hamburguesas
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#lover">Meat Lover</a>
-                                    <a class="dropdown-item" href="#beto">Beto Burger</a>
-                                    <a class="dropdown-item" href="#classic">The Classic</a>
-                                    <a class="dropdown-item" href="#onion">Sweet Onion</a>
-                                    <a class="dropdown-item" href="#royale">Royale Bacon</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="hamburguesas">
                                 </div>
                             </li>
                         </div>
@@ -101,22 +91,17 @@
                     <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop">
                         <img src="img/logo.jpg" alt="">
                     </a>
-                    <ul class="navbar-nav d-flex justify-content-between">
-                        <div class="d-flex flex-lg-row flex-column">
+                    <ul class="navbar-nav d-flex justify-content-center">
+                        <div class="d-flex flex-lg-row flex-column justify-content-center">
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#contacto">Contacto</a>
                             </li>
-                            <li class="nav-item ">
+                            <li class="nav-item " id="btnCarrito">
                                 <a class="nav-link" href="" data-toggle="modal" data-target="#ventanaModal">
                                     <span class="lnr lnr-cart"></span>
                                 </a>
                             </li>
                         </div>
-                        <li class="nav-item">
-                            <a id="side-search-open" class="nav-link">
-                                <span class="lnr lnr-magnifier"></span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,9 +164,8 @@
                     <div class="col-lg-6 hero-right">
                         <div>
                             <div class="item">
-                                <img class="img-fluid" src="img/hero-1.jpg" alt="">
+                                <img class="img-fluid" src="img/logo.jpg" alt="">
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -190,89 +174,12 @@
 
         <!-- Special Dishes Section -->
         <section id="hamburguesas" class="bg-grey section-padding">
-            <div class="container">
+            <div class="container" id="productos">
                 <div class="section-content">
                     <div class="heading-section text-center">
                         <h2>
                             Hamburguesas
                         </h2>
-                    </div>
-                    <div class="row mt-5" id="lover">
-                        <div class="col-lg-5 col-md-6 align-self-center py-5">
-                            <h2 class="special-number">01.</h2>
-                            <div class="dishes-text">
-                                <h3><span>Meat</span><br> Lover</h3>
-                                <p class="pt-3">Nuestro pan de papa artesanal, 330gr de nuestro blend y 5 fetas de queso
-                                    cheddar </p>
-                                <h3 class="special-dishes-price">$900</h3>
-                                <a id="MeatLover" class="btn-primary mt-3" style="cursor: pointer;">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                            <img src="img/lover.jpg" alt="" class="img-fluid shadow w-100">
-                        </div>
-                    </div>
-                    <div class="row mt-5" id="beto">
-                        <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
-                            <img src="img/beto.jpg" alt="" class="img-fluid shadow w-100">
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
-                            <h2 class="special-number">02.</h2>
-                            <div class="dishes-text">
-                                <h3><span>Beto</span><br>Burger</h3>
-                                <p class="pt-3">Nuestro pan de papa artesanal, cebolla crispy, barbacoa, sweetspicy
-                                    mayo, 240gr de nuestro blend y queso cheddar</p>
-                                <h3 class="special-dishes-price">$800</h3>
-                                <a id="BetoBurger" class="btn-primary mt-3" style="cursor: pointer;">Agregar<span><i
-                                            class="fa fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-5" id="classic">
-                        <div class="col-lg-5 col-md-6 align-self-center py-5">
-                            <h2 class="special-number">03.</h2>
-                            <div class="dishes-text">
-                                <h3><span>The</span><br>Classic</h3>
-                                <p class="pt-3">Nuestro pan de papa artesanal, lactonesa de relish, tomate, lechuga, 240
-                                    gr de nuestro blend y queso cheddar</p>
-                                <h3 class="special-dishes-price">$800</h3>
-                                <a id="TheClassic" class="btn-primary mt-3" style="cursor: pointer;">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                            <img src="img/classic.jpg" alt="" class="img-fluid shadow w-100">
-                        </div>
-                    </div>
-                    <div class="row mt-5" id="onion">
-                        <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
-                            <img src="img/onion.jpg" alt="" class="img-fluid shadow w-100">
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
-                            <h2 class="special-number">04.</h2>
-                            <div class="dishes-text">
-                                <h3><span>Sweet</span><br>Onion</h3>
-                                <p class="pt-3">Nuestro pan de papa artesanal, cebollas caramelizadas, salsa Thousand
-                                    Island, 240gr de nuestro blend y queso cheddar</p>
-                                <h3 class="special-dishes-price">$800</h3>
-                                <a id="SweetOnion" class="btn-primary mt-3" style="cursor: pointer;">Agregar<span><i
-                                            class="fa fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-5" id="royale">
-                        <div class="col-lg-5 col-md-6 align-self-center py-5">
-                            <h2 class="special-number">05.</h2>
-                            <div class="dishes-text">
-                                <h3><span>Royale</span><br>Bacon</h3>
-                                <p class="pt-3">Nuestro pan de papa artesanal, panceta, cebolla brunoise, ketchup, 240gr
-                                    de nuestro blend y queso cheddar</p>
-                                <h3 class="special-dishes-price">$800</h3>
-                                <a id="RoyaleBacon" class="btn-primary mt-3" style="cursor: pointer;">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                            <img src="img/royayle.jpg" alt="" class="img-fluid shadow w-100">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -281,7 +188,7 @@
 
         <!-- Reservation Section -->
         <section id="contacto" class="bg-fixed bg-white section-padding overlay"
-            style="background-image: url(img/reservation-bg.jpg);">
+            style="background-image: url(img/reservation-bg.jpg); background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
@@ -307,7 +214,7 @@
 
                                     <div class="col-md-12 form-group">
                                         <textarea class="form-control" id="message" name="message" rows="6"
-                                            placeholder="Qué vas a querer? ..."></textarea>
+                                            placeholder="Dejanos tu consulta ..."></textarea>
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <button class="btn btn-primary btn-shadow btn-lg" type="submit" id="submit"
