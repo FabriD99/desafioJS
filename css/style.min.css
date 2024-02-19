@@ -184,6 +184,7 @@ a:hover {
 .hero {
   height: 600px;
   position: relative;
+  padding: 50px;
 }
 @media (min-width: 992px) {
   .hero {
