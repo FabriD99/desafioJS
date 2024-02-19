@@ -186,20 +186,7 @@ a:hover {
   position: relative;
   padding: 50px;
 }
-@media (min-width: 992px) {
-  .hero {
-    height: calc(100vh - 130px);
-  }
-}
 
-.hero-info {
-  padding-top: 60px;
-}
-@media (min-width: 1420px) {
-  .hero-info {
-    padding-top: 140px;
-  }
-}
 .hero-info li {
   padding-right: 15px;
   padding-left: 15px;
