@@ -516,6 +516,12 @@ a:hover {
   margin-left: 50px;
 }
 
+#productos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;

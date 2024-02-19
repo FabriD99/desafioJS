@@ -1,36 +1,36 @@
 [
     {
-        "id": 1,
+        "id": "Meat Lover",
         "nombre": "Meat Lover",
-        "precio": "900",
+        "precio": "5900",
         "img": "./img/lover.jpg",
         "descripcion": "Nuestro pan de papa artesanal, 330gr de nuestro blend y 5 fetas de queso cheddar"
       },
       {
-        "id": 2,
+        "id": "Beto Burger",
         "nombre": "Beto Burger",
-        "precio": "800",
+        "precio": "5800",
         "img": "./img/beto.jpg",
         "descripcion": "Nuestro pan de papa artesanal, cebolla crispy, barbacoa, sweetspicy mayo, 240gr de nuestro blend y queso cheddar"
       },
       {
-        "id": 3,
+        "id": "The Classic",
         "nombre": "The Classic",
-        "precio": "800",
+        "precio": "5800",
         "img": "./img/classic.jpg",
         "descripcion": "Nuestro pan de papa artesanal, lactonesa de relish, tomate, lechuga, 240gr de nuestro blend y queso cheddar"
       },
       {
-        "id": 4,
+        "id": "Royale Bacon",
         "nombre": "Royale Bacon",
-        "precio": "800",
+        "precio": "5800",
         "img": "./img/royale.jpg",
         "descripcion": "Nuestro pan de papa artesanal, panceta, cebolla brunoise, ketchup, 240gr de nuestro blend y queso cheddar"
       },
       {
-        "id": 5,
+        "id": "Sweet Onion",
         "nombre": "Sweet Onion",
-        "precio": "800",
+        "precio": "5800",
         "img": "./img/onion.jpg",
         "descripcion": "Nuestro pan de papa artesanal, cebollas caramelizadas, salsa ThousandIsland, 240gr de nuestro blend y queso cheddar"
       }

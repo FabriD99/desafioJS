@@ -48,14 +48,14 @@ fetch(productos)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((hamburguesa) => {
-      let option = document.createElement("option");
-      option.innerHTML = hamburguesa.nombre;
+      let option = document.createElement("div");
+      option.innerHTML = `<a href='#${hamburguesa.id}'>${hamburguesa.nombre}</a>`;
       hamburguesas.appendChild(option);
 
       let div = document.createElement("div");
       div.classList.add("card");
       div.innerHTML = `
-      <div style="display:flex; flex-direction:column; align-items: center">
+      <div id="${hamburguesa.id}" style="display:flex; flex-direction:column; align-items: center; padding:40px">
       <img src="${hamburguesa.img}" width="30%" alt="Foto producto">
       <h3>${hamburguesa.nombre}</h3>
       <p>${hamburguesa.descripcion}</p>
